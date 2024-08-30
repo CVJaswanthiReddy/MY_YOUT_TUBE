@@ -3,10 +3,11 @@ import "./App.css";
 import Body from "./components/Body";
 import Head from "./components/Head";
 import store from "./utilis/store";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import SearchResultsPage from "./components/SearchResultsPage";
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -20,9 +21,14 @@ const appRouter = createBrowserRouter([
         path: "watch",
         element: <WatchPage />,
       },
+      {
+        path: "search/:query",
+        element: <SearchResultsPage />,
+      },
     ],
   },
 ]);
+
 function App() {
   return (
     <Provider store={store}>
@@ -35,13 +41,3 @@ function App() {
 }
 
 export default App;
-/**
- * Head
- * body
- * sidebar
- *    menuitems
- * maincontainer
- *    buttonlist
- *    videocontainer
- *     videocard
- */
